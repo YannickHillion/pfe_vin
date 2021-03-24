@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PFE VIN</title>
+</head>
+<body>
+	<h1>PFE VIN</h1>
+	<hr>
+	<h2>Predic User Vin</h2>
+	<input type="text" id="user" placeholder="user id" />
+	<input type="text" id="vin" placeholder="vin id"/>
+	<input type="button" id="btn" value="Submit" onClick="javascript: window.open('http://localhost:8000/predic_user_vin/' + document.getElementById('user').value + '/' + document.getElementById('vin').value);" />
+	<hr>
+	<h2>Predic User TOP</h2>
+	<input type="text" id="user_top" placeholder="user id" />
+	<input type="button" id="btn" value="Submit" onClick="javascript: window.open('http://localhost:8000/predic_user_top/' + document.getElementById('user_top').value);" />
+	<hr>
+	<h2>Print Result</h2>
+	<input type="button" id="btn" value="Submit" onClick="javascript: window.open('http://localhost:8000/print_result/')" />
+</body>
+</html>

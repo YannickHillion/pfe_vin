@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Predic User-Vin</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'vin/dist/Chart.js' %}">    
+	<link rel="stylesheet" type="text/css" href="{% static 'vin/dist/Chart.min.js' %}">    
+</head>
+<body>
+
+
+		<h1>{{liste_result.1}}</h1>
+		<p>{{liste_result.4}}</p>
+
+	<canvas id="myChart" width="400" height="200"></canvas>
+
+
+
+
+
+	<script type="text/javascript" src="{% static 'vin/dist/Chart.bundle.js' %}"></script>
+	<script type="text/javascript" src="{% static 'vin/dist/Chart.bundle.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'vin/dist/Chart.js' %}"></script>
+	<script type="text/javascript" src="{% static 'vin/dist/Chart.bundle.js' %}"></script>
+	<script type="text/javascript" src="{% static 'vin/dist/Chart.min.js' %}"></script>
+
+	<script>
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var myChart = new Chart(ctx, {
+	    type: 'bar',
+	    data: {
+	        labels: ['Erreur SVD', 'Erreur knn contenue', 'Erreur KNN colaboratif', 'Erreur KNN hybrid'],
+	        datasets: [{
+	            label: "Erreur",
+	            data: ['{{liste_result.0}}', '{{liste_result.2}}', '{{liste_result.3}}', '{{liste_result.5}}'],
+	            backgroundColor: [
+	                'rgba(255, 99, 132, 0.2)',
+	                'rgba(54, 162, 235, 0.2)',
+	                'rgba(255, 206, 86, 0.2)',
+	                'rgba(75, 192, 192, 0.2)',
+	            ],
+	            borderColor: [
+	                'rgba(255, 99, 132, 1)',
+	                'rgba(54, 162, 235, 1)',
+	                'rgba(255, 206, 86, 1)',
+	                'rgba(75, 192, 192, 1)',
+	            ],
+	            borderWidth: 1
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero: true
+	                }
+	            }]
+	        }
+	    }
+	});
+	</script>
+
+
+</body>
+</html>
